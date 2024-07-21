@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import authRoutes from "./routes/auth.routes.js";
 
 dotenv.config();
 const app = express();
@@ -11,17 +12,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/api/auth/signup", (req, res) => {
-  console.log("signup route");
-});
-
-app.get("/api/auth/login", (req, res) => {
-  console.log("login route");
-});
-
-app.get("/api/auth/siglogout", (req, res) => {
-  console.log("signup logout");
-});
+app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
-
