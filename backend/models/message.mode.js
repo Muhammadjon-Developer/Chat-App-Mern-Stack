@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const messageSchema = new mongoose.Schema(
+const messageSchema = new mongoose.Schema(  
   {
     senderId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -13,7 +13,7 @@ const messageSchema = new mongoose.Schema(
       required: true,
     },
     message: {
-      type: String,
+      type: String, 
       reuired: true,
     },
     // createdAt, updatedAt => message.createdAt : 19:00
